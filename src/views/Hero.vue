@@ -7,7 +7,9 @@
         Nutritionally balanced, easy to cook recipes. Quality fresh local
         ingredients.
       </p>
-      <button class="main__modal__btn">Search for recipe</button>
+      <router-link to="/recipes">
+        <button class="main__modal__btn">Search for recipe</button>
+      </router-link>
     </div>
   </main>
 </template>

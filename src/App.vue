@@ -1,23 +1,25 @@
 <template>
-  <template v-if="!isGlobalLoading"><Hero /></template>
+  <router-view v-if="!isGlobalLoading"> </router-view>
 
   <Loader v-else />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Hero from "./views/Hero.vue";
 import Loader from "./views/Loader.vue";
-import { useLoading } from "./composable/useLoading";
+import { useLoading } from "./utils/composable/useLoading";
+import { useRecipe } from "./utils/composable/useRecipe";
 
 export default defineComponent({
   name: "App",
   components: {
-    Hero,
     Loader,
   },
   setup() {
     const { isGlobalLoading } = useLoading();
+    const { searchRecipesByQuery } = useRecipe();
+
+    searchRecipesByQuery();
 
     return { isGlobalLoading };
   },
