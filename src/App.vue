@@ -1,15 +1,25 @@
 <template>
-  <Hero />
+  <template v-if="!isGlobalLoading"><Hero /></template>
+
+  <Loader v-else />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import Hero from "./views/Hero.vue";
+import Loader from "./views/Loader.vue";
+import { useLoading } from "./composable/useLoading";
 
 export default defineComponent({
   name: "App",
   components: {
     Hero,
+    Loader,
+  },
+  setup() {
+    const { isGlobalLoading } = useLoading();
+
+    return { isGlobalLoading };
   },
 });
 </script>
