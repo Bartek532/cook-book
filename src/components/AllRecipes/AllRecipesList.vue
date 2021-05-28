@@ -1,6 +1,6 @@
 <template>
   <section class="all-recipes">
-    <AllRecipesItem
+    <AllRecipesTile
       v-for="recipe in recipes"
       :key="recipe.uri"
       :recipe="recipe"
@@ -11,12 +11,12 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { Recipe } from "../../types";
-import AllRecipesItem from "./AllRecipesItem.vue";
+import AllRecipesTile from "./AllRecipesTile.vue";
 
 export default defineComponent({
   name: "PopularRecipesList",
   components: {
-    AllRecipesItem,
+    AllRecipesTile,
   },
   props: {
     recipes: {

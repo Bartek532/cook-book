@@ -31,6 +31,7 @@ export default defineComponent({
 :root {
   --main-color: #c92e43;
   --main-white: #fff;
+  --main-gray: #778079;
 }
 
 body {

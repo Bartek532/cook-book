@@ -1,6 +1,7 @@
 <template>
   <main class="main">
     <div class="main__modal">
+      <RecipeIcon />
       <img src="../assets/svg/recipe.svg" alt="recipe" />
       <h1 class="main__modal__title">Recipe?</h1>
       <p class="main__modal__description">
@@ -16,9 +17,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import RecipeIcon from "./recipe.svg";
 
 export default defineComponent({
   name: "Hero",
+  components: {
+    RecipeIcon,
+  },
 });
 </script>
 
